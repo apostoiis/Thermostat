@@ -80,6 +80,15 @@ describe("Thermostat", function() {
     })
   })
 
+  describe('The colour', function() {
+
+    it('shows blue if less than 18', function() {
+      thermostat.temperature = 15;
+      expect(thermostat.status()).toEqual("blue");
+    })
+
+  })
+
 
 });
 

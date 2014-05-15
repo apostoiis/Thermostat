@@ -36,3 +36,9 @@ Thermostat.prototype.cooler = function() {
 Thermostat.prototype.reset = function() {
 	this.temperature = 18;
 }
+
+Thermostat.prototype.status = function() {
+	if(this.temperature <= 18) {
+		return "blue";
+	}
+}
