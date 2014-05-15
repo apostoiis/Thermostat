@@ -12,14 +12,28 @@ describe("Thermostat", function() {
 
   describe('If power save mode is on', function(){
 
-      it('has a maximum temperature of 25', function() {
-        expect(thermostat.maximumTemperature()).toEqual(25);
-      })
+    it('has a maximum temperature of 25', function() {
+      expect(thermostat.maximumTemperature()).toEqual(25);
+    })
 
-      it('has a minimum temperature of 12', function() {
-        expect(thermostat.minimumTemperature()).toEqual(12);
-      })
+    it('has a minimum temperature of 12', function() {
+      expect(thermostat.minimumTemperature()).toEqual(12);
+    })
 
+  })
+
+  describe('If power save mode is off', function() {
+
+    it('has a maximum temperature of 35', function() {
+      thermostat.powerSaveMode = false;
+      expect(thermostat.maximumTemperature()).toEqual(35);
+    })
+
+    it('has a minimum temperature of 10', function() {
+      thermostat.powerSaveMode = false;
+      expect(thermostat.minimumTemperature()).toEqual(10);
+    })
+ 
   })
 
 
