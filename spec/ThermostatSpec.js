@@ -92,6 +92,11 @@ describe("Thermostat", function() {
       expect(thermostat.status()).toEqual("orange");
     })
 
+    it('shows red if anything else', function() {
+      thermostat.temperature = 33;
+      expect(thermostat.status()).toEqual("red");
+    })
+
   })
 
 
