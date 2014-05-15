@@ -10,20 +10,30 @@
 		</h1>
 		<button id="warmer">↑</button>
 		<button id="cooler">↓</button>
+	
 
 
 		<script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
 		<script src='./src/Thermostat.js'></script>
 		<script>
-			$(document).ready(function(){
-				var thermostat = new Thermostat();
-				$('#temperature').html(thermostat.temperature);
-					$('#warmer').on('click', function(){
-						thermostat.warmer();
-							$('#temperature').html(thermostat.temperature);
+			var thermostat = new Thermostat();
 
+				function updateDisplay(){
+					$('#temperature').html(thermostat.temperature);
+				}
+
+				$(document).ready(function(){
+		
+					$('#temperature').html(thermostat.temperature);
+						$('#warmer').on('click', function(){
+							thermostat.warmer();
+								updateDisplay();
+							})
+						$('#cooler').on('click', function(){
+							thermostat.cooler();
+								updateDisplay();
+							})
 				})
-			})
 		</script>
 	</body>
 </html>
