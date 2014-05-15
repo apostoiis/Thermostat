@@ -10,7 +10,9 @@
 		</h1>
 		<button id="warmer">↑</button>
 		<button id="cooler">↓</button>
-	
+		<label for="psm">Power saving mode</label>
+		<input type="checkbox" id="psm" checked>
+
 
 
 		<script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
@@ -33,6 +35,11 @@
 							thermostat.cooler();
 								updateDisplay();
 							})
+
+					$('#psm').on('change', function(){
+						thermostat.powerSaveMode = $(this).prop('checked');
+					})
+
 				})
 		</script>
 	</body>
