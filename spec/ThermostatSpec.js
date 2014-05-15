@@ -7,6 +7,11 @@ describe("Thermostat", function() {
 
   })
 
+  it('has power save mode setting switched on as a default', function() {
+    expect(thermostat.powerSaveMode).toEqual(true);
+
+  })
+
 
 });
 
