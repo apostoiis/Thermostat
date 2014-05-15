@@ -36,6 +36,24 @@ describe("Thermostat", function() {
  
   })
 
+  describe('The temperature', function() {
+
+    it('can increase by 1 degree', function() {
+      var thermostat = new Thermostat();
+      expect(thermostat.temperature).toEqual(18);
+      thermostat.warmer();
+      expect(thermostat.temperature).toEqual(19);
+    })
+
+    it('can decrease by 1 degree', function() {
+      var thermostat = new Thermostat();
+      expect(thermostat.temperature).toEqual(18);
+      thermostat.cooler();
+      expect(thermostat.temperature).toEqual(17);
+    })
+
+  })
+
 
 
 

@@ -22,3 +22,10 @@ Thermostat.prototype.minimumTemperature = function() {
 	}
 }
 
+Thermostat.prototype.warmer = function() {
+	return this.temperature += 1;
+}
+
+Thermostat.prototype.cooler = function() {
+	return this.temperature -= 1;
+}
