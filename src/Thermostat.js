@@ -27,5 +27,8 @@ Thermostat.prototype.warmer = function() {
 }
 
 Thermostat.prototype.cooler = function() {
+	if(this.powerSaveMode === true && this.temperature > 12 ||
+		this.powerSaveMode === false && this.temperature > 10) {
 	return this.temperature -= 1;
+	}
 }

@@ -52,6 +52,14 @@ describe("Thermostat", function() {
       expect(thermostat.temperature).toEqual(17);
     })
 
+    it('can not decrease if temperature is less than or equal to the minimum', function () {
+      var thermostat = new Thermostat();
+      thermostat.powerSaveMode = false;
+      thermostat.minimumTemperature();
+      thermostat.cooler();
+      expect(thermostat.temperature).toEqual(10);
+    })
+
   })
 
 
