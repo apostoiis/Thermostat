@@ -35,3 +35,7 @@ Thermostat.prototype.cooler = function() {
 	return this.temperature -= 1;
 	}
 }
+
+Thermostat.prototype.reset = function() {
+	this.temperature = 18;
+}

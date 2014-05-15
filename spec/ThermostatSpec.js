@@ -70,6 +70,17 @@ describe("Thermostat", function() {
 
   })
 
+  describe('Reset button', function() {
+
+    it('restores the thermostat back to default temperature setting', function() {
+      var thermostat = new Thermostat();
+      thermostat.maximumTemperature();
+      expect(thermostat.temperature).toEqual(25);
+      thermostat.reset();
+      expect(thermostat.temperature).toEqual(18);
+    })
+  })
+
 
 
 
