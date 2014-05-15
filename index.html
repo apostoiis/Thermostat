@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="stylesheet.css" type="text/css" rel="stylesheet"/>
 		<meta charset='utf8'>
 		<title>Thermostat</title>
 	</head>
@@ -22,6 +23,7 @@
 
 				function updateDisplay(){
 					$('#temperature').html(thermostat.temperature);
+					$('#temperature').attr('class', '').addClass(thermostat.status());
 				}
 
 				$(document).ready(function(){
