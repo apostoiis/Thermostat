@@ -1,38 +1,35 @@
 function Thermostat() {
 	this.temperature = 18;
 	this.powerSaveMode = true;
-};
+}
 
 Thermostat.prototype.maximumTemperature = function() {
 	if(this.powerSaveMode === true){
-		return this.temperature = 25;
+		return 25;
 	}
 	else if(this.powerSaveMode === false){
-		return this.temperature = 35;
+		return 35;
 	}
-	};
-
+}
 
 Thermostat.prototype.minimumTemperature = function() {
 	if(this.powerSaveMode === true){
-		return this.temperature = 12;
+		return 12;
 	}
 	else if(this.powerSaveMode === false){
-		return this.temperature = 10;
+		return 10;
 	}
 }
 
 Thermostat.prototype.warmer = function() {
-	if(this.powerSaveMode === true && this.temperature < 25 ||
-		this.powerSaveMode === false && this.temperature < 35) {
-	return this.temperature += 1;
+	if(this.temperature < this.maximumTemperature()) {
+		return this.temperature += 1;
 	}
 }
 
 Thermostat.prototype.cooler = function() {
-	if(this.powerSaveMode === true && this.temperature > 12 ||
-		this.powerSaveMode === false && this.temperature > 10) {
-	return this.temperature -= 1;
+	if(this.temperature > this.minimumTemperature()) {
+		return this.temperature -= 1;
 	}
 }
 

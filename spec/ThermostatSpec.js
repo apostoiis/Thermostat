@@ -1,6 +1,10 @@
 describe("Thermostat", function() {
 
-  var thermostat = new Thermostat();
+  var thermostat;
+
+  beforeEach(function(){
+    thermostat = new Thermostat();
+  })
 
   it('has a default temperature of 18 degrees', function() {
     expect(thermostat.temperature).toEqual(18);
@@ -39,31 +43,27 @@ describe("Thermostat", function() {
   describe('The temperature', function() {
 
     it('can increase by 1 degree', function() {
-      var thermostat = new Thermostat();
       expect(thermostat.temperature).toEqual(18);
       thermostat.warmer();
       expect(thermostat.temperature).toEqual(19);
     })
 
     it('can decrease by 1 degree', function() {
-      var thermostat = new Thermostat();
       expect(thermostat.temperature).toEqual(18);
       thermostat.cooler();
       expect(thermostat.temperature).toEqual(17);
     })
 
     it('can not decrease if temperature is less than or equal to the minimum', function () {
-      var thermostat = new Thermostat();
       thermostat.powerSaveMode = false;
-      thermostat.minimumTemperature();
+      thermostat.temperature = 10;
       thermostat.cooler();
       expect(thermostat.temperature).toEqual(10);
     })
 
     it('can not increase if the temperature is greater than or equal to the maximum', function() {
-      var thermostat = new Thermostat();
       thermostat.powerSaveMode = false;
-      thermostat.maximumTemperature();
+      thermostat.temperature = 35;
       thermostat.warmer();
       expect(thermostat.temperature).toEqual(35);
     })
@@ -73,15 +73,12 @@ describe("Thermostat", function() {
   describe('Reset button', function() {
 
     it('restores the thermostat back to default temperature setting', function() {
-      var thermostat = new Thermostat();
-      thermostat.maximumTemperature();
+      thermostat.temperature = 25;
       expect(thermostat.temperature).toEqual(25);
       thermostat.reset();
       expect(thermostat.temperature).toEqual(18);
     })
   })
-
-
 
 
 });
