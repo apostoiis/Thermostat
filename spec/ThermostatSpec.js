@@ -87,6 +87,11 @@ describe("Thermostat", function() {
       expect(thermostat.status()).toEqual("blue");
     })
 
+    it('shows orange if less than 25', function () {
+      thermostat.temperature = 23;
+      expect(thermostat.status()).toEqual("orange");
+    })
+
   })
 
 

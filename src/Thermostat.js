@@ -41,4 +41,7 @@ Thermostat.prototype.status = function() {
 	if(this.temperature <= 18) {
 		return "blue";
 	}
+	else if(this.temperature <= 25) {
+		return "orange";
+	}
 }
