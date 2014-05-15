@@ -23,7 +23,10 @@ Thermostat.prototype.minimumTemperature = function() {
 }
 
 Thermostat.prototype.warmer = function() {
+	if(this.powerSaveMode === true && this.temperature < 25 ||
+		this.powerSaveMode === false && this.temperature < 35) {
 	return this.temperature += 1;
+	}
 }
 
 Thermostat.prototype.cooler = function() {

@@ -60,6 +60,14 @@ describe("Thermostat", function() {
       expect(thermostat.temperature).toEqual(10);
     })
 
+    it('can not increase if the temperature is greater than or equal to the maximum', function() {
+      var thermostat = new Thermostat();
+      thermostat.powerSaveMode = false;
+      thermostat.maximumTemperature();
+      thermostat.warmer();
+      expect(thermostat.temperature).toEqual(35);
+    })
+
   })
 
 
